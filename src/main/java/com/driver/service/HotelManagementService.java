@@ -75,7 +75,7 @@ public class HotelManagementService {
         }  return ans;
     }
 
-    public Hotel updateFacilities(List<Facility> newFacilities, String hotelName) {
+    public List<Facility> updateFacilities(List<Facility> newFacilities, String hotelName) {
       Hotel h = HMR.hotelDB.get(hotelName);
       List<Facility> lf = h.getFacilities();
 
@@ -86,6 +86,6 @@ public class HotelManagementService {
       }
         h.setFacilities(lf);
       HMR.hotelDB.put(hotelName,h);
-      return h;
+      return lf;
     }
 }
