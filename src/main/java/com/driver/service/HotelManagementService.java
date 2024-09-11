@@ -33,9 +33,18 @@ public class HotelManagementService {
             Hotel h = HMR.hotelDB.get(n);
             if(h.getFacilities().size() >= maxFac){
                 maxFac = h.getFacilities().size();
+            }
+        }
+        for(String n : HMR.hotelDB.keySet()){
+            Hotel h = HMR.hotelDB.get(n);
+            if(h.getFacilities().size() == maxFac){
                 ans.add(n);
             }
         }
+        if(maxFac==0){
+            return "";
+        }
+
         Collections.sort(ans);
         return ans.get(0);
     }
