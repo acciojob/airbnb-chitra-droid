@@ -15,7 +15,7 @@ public class HotelManagementRepository {
 
    public String addHotel(Hotel hotel) {
       String h = hotel.getHotelName();
-      if(h.isEmpty() || h==null ||
+      if(h.isEmpty() || h.length()==0 || hotel==null || h==null ||
               hotelDB.containsKey(h)){
       return "FAILURE";
       }else{
