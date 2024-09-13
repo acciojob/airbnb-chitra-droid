@@ -25,10 +25,10 @@ public class HotelManagementRepository {
    }
 
    public Integer addUser(User user) {
-      if(user!=null) {
+
          UserDB.put(user.getaadharCardNo(), user);
          return user.getaadharCardNo();
-      }
-      return -1;
+
+
    }
 }
